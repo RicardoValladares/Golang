@@ -24,6 +24,6 @@ librerias.exe
 mkdir Git 
 cd Git 
 notepad main.go
-go mod init github.com/Morty-debug/Git
+go mod init github.com/RicardoValladares/Golang/Git
 go mod tidy
 ```

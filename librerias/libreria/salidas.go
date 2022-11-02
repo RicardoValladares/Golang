@@ -1,5 +1,5 @@
 package salidas
 import "fmt"
 func Hola() {
-    fmt.Println("Hola desde Git_")
+    fmt.Println("Hola Gopher")
 }

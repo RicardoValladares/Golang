@@ -1,5 +1,5 @@
 # Golang
-Ejemplo hechos en Golang.
+Ejemplo de programacion hechos en Golang.
 
 
 ### compilar en linux para windows:

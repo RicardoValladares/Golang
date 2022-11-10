@@ -1,4 +1,4 @@
-module github.com/RicardoValladares/Golang/GUI
+module github.com/RicardoValladares/Golang/11-GUI
 
 go 1.19
 

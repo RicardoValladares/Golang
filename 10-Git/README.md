@@ -8,13 +8,13 @@ Git.exe
 
 ### obtener libreria actualizada de git
 ```batch
-go get -d github.com/Morty-debug/librerias
+go get github.com/Morty-debug/librerias@latest
 ```
 
 
 ### obtener binarios de la libreria en git y usarla como variable de entorno
 ```batch
-go install github.com/Morty-debug/librerias
+go install github.com/Morty-debug/librerias@latest
 librerias.exe
 ```
 

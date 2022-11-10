@@ -2,7 +2,7 @@ package Docente
 
 // importacion de packetes
 import "fmt"
-import Persona "github.com/RicardoValladares/Golang/9-POO/Persona"
+import Persona "github.com/RicardoValladares/Golang/09-POO/Persona"
 
 // inicializacion de packete
 func init() {

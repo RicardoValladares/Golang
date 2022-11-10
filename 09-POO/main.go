@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-import Docente "github.com/RicardoValladares/Golang/9-POO/Persona/Docente"
+import Docente "github.com/RicardoValladares/Golang/09-POO/Persona/Docente"
 
 func main() {
 	//creamos objeto profe1

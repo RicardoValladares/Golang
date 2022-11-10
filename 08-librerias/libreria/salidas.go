@@ -1,5 +1,5 @@
 package salidas
 import "fmt"
 func Hola() {
-    fmt.Println("Hola desde Github_")
+    fmt.Println("Hola desde la ultima actualizacion")
 }

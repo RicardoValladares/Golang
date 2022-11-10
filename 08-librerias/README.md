@@ -11,7 +11,7 @@ cd ..
 
 ### inicializar proyecto
 ```batch
-go mod init github.com/RicardoValladares/Golang/8-librerias
+go mod init github.com/RicardoValladares/Golang/08-librerias
 go mod tidy
 ```
 

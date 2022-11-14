@@ -1,4 +1,4 @@
-module github.com/RicardoValladares/Golang/4-API-Rest/Go
+module github.com/RicardoValladares/Golang/14-API-Rest/Go
 
 go 1.19
 

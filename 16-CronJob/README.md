@@ -1,5 +1,5 @@
 
-### poner la aplicacion como servicio en systemd linux
+### poner la aplicacion como demonio en systemd linux
 ```bash
 go build -o main.bin
 sudo cp main.bin /opt

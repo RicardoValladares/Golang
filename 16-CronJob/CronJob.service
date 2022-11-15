@@ -1,0 +1,14 @@
+[Unit]
+Description=CronJob
+After=network.target
+StartLimitIntervalSec=10
+
+[Service]
+Type=CronJob
+Restart=always
+RestartSec=10
+ExecStart=/opt/main.bin
+
+[Install]
+WantedBy=multi-user.target
+

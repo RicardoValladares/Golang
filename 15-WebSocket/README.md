@@ -1,5 +1,5 @@
 
-### probar webservice desde consola del navegador
+### probar websocket desde consola del navegador
 ```javascript
 
 var ws = new WebSocket('ws://localhost:8080');

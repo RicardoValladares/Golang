@@ -18,7 +18,7 @@ var upgrader = websocket.Upgrader{
 }
 
 
-// funcion donde una nueva conexion 
+// funcion donde abrimos una nueva conexion 
 func onopen(w http.ResponseWriter, r *http.Request) {
 	ws, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
@@ -26,10 +26,12 @@ func onopen(w http.ResponseWriter, r *http.Request) {
 	}
 	clients[ws] = true //agregamos la conexion al arreglo de clientes
 	log.Println("Cliente Conectado")
-	err = ws.WriteMessage(websocket.TextMessage, []byte("Bienvenido al WebSocket Golang"))
-	if err != nil {
+	
+	send(ws, "Bienvenido al WebSocket Golang")
+	//ws.WriteMessage(websocket.TextMessage, []byte())
+	/*if err != nil {
 		log.Println(err)
-	}
+	}*/
 	onmessage(ws)
 }
 
@@ -42,28 +44,35 @@ func onmessage(conn *websocket.Conn) {
 			return
 		}
 		log.Println(string(p))
-		//send(conn, websocket.TextMessage, []byte(string(p)))
-		onbroadcast(websocket.TextMessage, []byte(string(p)))
+		//send(conn, string(p))
+		onbroadcast(string(p))
 	}
 }
 
 // funcion donde enviamos el mensaje a un cliente
-func send(conn *websocket.Conn, messageType int, data []byte) {
-	if err := conn.WriteMessage(messageType, data); err != nil {
-		log.Println(err)
-		return
+func send(client *websocket.Conn, data string) {
+	err := client.WriteMessage(websocket.TextMessage, []byte(string(data)))
+	if err != nil {
+		client.Close()
+		delete(clients, client)
 	}
 }
 
 // funcion donde enviamos el mensaje a todos los cliente conectados
-func onbroadcast(messageType int, data []byte) {
+func onbroadcast(data string) {
 	for client := range clients {
-		err := client.WriteMessage(messageType, data)
+		err := client.WriteMessage(websocket.TextMessage, []byte(string(data)))
 		if err != nil {
 			client.Close()
 			delete(clients, client)
 		}
 	}
+}
+
+// funcion donde cerramos un conexion 
+func onclose(client *websocket.Conn) {
+	client.Close()
+	delete(clients, client)
 }
 
 //funcion del html y javascript que simula un chat 

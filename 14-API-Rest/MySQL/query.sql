@@ -20,7 +20,7 @@ CREATE FUNCTION creartocken()
         DECLARE token VARCHAR(200);
         DECLARE creacion DATETIME;
         DECLARE temporizado DATETIME;
-        SELECT CONCAT(MD5('Tocken'),'.',MD5(RAND()),'.',MD5(NOW())), NOW(), DATE_ADD(NOW(),INTERVAL 10 MINUTE) INTO token, creacion, temporizado;
+        SELECT CONCAT(TO_BASE64('Tocken'),'.',TO_BASE64(RAND()),'.',TO_BASE64(NOW())), NOW(), DATE_ADD(NOW(),INTERVAL 10 MINUTE) INTO token, creacion, temporizado;
         SELECT COUNT(*) INTO contador FROM tocken WHERE tocken = token;
         IF contador > 0 THEN
             UPDATE tocken SET sistema=creacion, limite=temporizado WHERE tocken = token;

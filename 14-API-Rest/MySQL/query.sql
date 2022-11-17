@@ -5,7 +5,10 @@ CREATE TABLE tocken(
 	tocken VARCHAR(200) NOT NULL,
 	sistema DATETIME NOT NULL,
 	limite DATETIME NOT NULL,
-	PRIMARY KEY(idtocken)
+	PRIMARY KEY(idtocken),
+	INDEX (tocken),
+	INDEX (sistema),
+	INDEX (limite)
 );
 
 DELIMITER $$

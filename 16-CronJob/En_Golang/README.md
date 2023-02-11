@@ -8,4 +8,5 @@ sudo cp CronJob.service /lib/systemd/system
 sudo systemctl enable CronJob
 sudo systemctl start CronJob 
 sudo systemctl status CronJob
+journalctl -u CronJob.service
 ```

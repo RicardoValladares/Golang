@@ -1,4 +1,4 @@
-module github.com/RicardoValladares/Golang/16-CronJob
+module github.com/RicardoValladares/Golang/16-CronJob/En_Golang
 
 go 1.19
 

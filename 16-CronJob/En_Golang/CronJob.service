@@ -10,6 +10,7 @@ TimeoutStopSec=50
 KillSignal=INT
 SendSIGKILL=yes
 SuccessExitStatus=0
+WorkingDirectory=/opt
 ExecStart=/opt/main.bin
 
 [Install]

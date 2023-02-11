@@ -1,0 +1,10 @@
+[Unit]
+Description=Simple service CronJobs
+
+[Service]
+ExecStart=/opt/main.bin
+RuntimeMaxSec=5s
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

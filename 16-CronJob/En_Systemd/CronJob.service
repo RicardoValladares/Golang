@@ -2,6 +2,7 @@
 Description=Simple service CronJobs
 
 [Service]
+WorkingDirectory=/opt
 ExecStart=/opt/main.bin
 RuntimeMaxSec=5s
 Restart=always

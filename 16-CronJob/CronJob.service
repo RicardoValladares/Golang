@@ -1,14 +1,16 @@
 [Unit]
 Description=CronJob
 After=network.target
-StartLimitIntervalSec=10
 
 [Service]
-Type=CronJob
-Restart=always
-RestartSec=10
+Restart=on-failure
+StandardOutput=journal
+StandardError=inherit
+TimeoutStopSec=50
+KillSignal=INT
+SendSIGKILL=yes
+SuccessExitStatus=0
 ExecStart=/opt/main.bin
 
 [Install]
 WantedBy=multi-user.target
-

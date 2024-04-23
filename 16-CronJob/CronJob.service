@@ -4,6 +4,7 @@ After=network.target
 
 [Service]
 Restart=on-failure
+RestartSec=3s
 StandardOutput=journal
 StandardError=inherit
 TimeoutStopSec=50
@@ -12,6 +13,7 @@ SendSIGKILL=yes
 SuccessExitStatus=0
 WorkingDirectory=/opt
 ExecStart=/opt/main.bin
+#Environment="LD_LIBRARY_PATH=/opt"
 
 [Install]
 WantedBy=multi-user.target

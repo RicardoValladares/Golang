@@ -64,7 +64,7 @@ func ejemplo2() {
 	fmt.Println("Start routine")
 	go routine(command, &wg) //se ejecuta por defecto en Start
 	time.Sleep(1 * time.Second) //esperar un segundo y mientras esperamos el proceso en paralelo sigue ejecutandose
-
+	/*
 	command <- "Pause" //pausamos la rutina
 	fmt.Println("Pause routine")
 	time.Sleep(1 * time.Second) //esperar un segundo y mientras esperamos el proceso en paralelo sigue pausado
@@ -72,7 +72,7 @@ func ejemplo2() {
 	fmt.Println("Start routine") 
 	command <- "Start" //ejecutamos nuevamente la rutina donde se quedo
 	time.Sleep(1 * time.Second) //esperar un segundo y mientras esperamos el proceso en paralelo sigue ejecutandose
-
+	*/
 	command <- "Shutdown" //detenemos el proceso
 	fmt.Println("Shutdown routine")
 	

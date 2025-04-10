@@ -15,3 +15,8 @@ si gestionas los servicios con otro sistema, aqui documentacion:
 https://www.laboratoriolinux.es/index.php/-noticias-mundo-linux-/software/28866-administrar-servicios-con-systemd-sysv-openrc-y-runit.html
 el mas comun es: Sysvinit
 
+```bash
+service --status-all
+ls -l /etc/init.d/*
+```
+
